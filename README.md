@@ -31,13 +31,16 @@ document root. Once the root has been found it creates two PHP variables:
 document root while the second is what to prefix URL's on your site with. Full
 examples of both being used are in the three `index.php pages`.
 
+
 ### Use Case: Built-in PHP Webserver
 
 In production your site is in the document root but while testing it is not.
 If you use the webserver built into PHP your files are in the document root but
-the URL is prefixed like http://localhost:63342/php-sub-site-demo/index.php
-which would break a accessing CSS at `/php-sub-site-demo` becuase it would actually
-be at `/php-sub-site-demo/php-sub-site-demo`.
+the URL is prefixed like
+[http://localhost:63342/php-sub-site-demo/index.php][demo-site] which would
+break a accessing CSS at `/css/style.css` because it would actually be at
+`/php-sub-site-demo/css/style.css`.
+
 
 ### Use Case: Test server with each site in a sub directory
 
@@ -74,6 +77,7 @@ so:
     └── test.example.com/site3__develop/index.php
 ```
 
+
 ### How using `root-finder.php` helps
 
 The code in `root-finder.php` allows you to solve both of these issues. The
@@ -82,6 +86,7 @@ combining that with the css reference shown. The pathing for additional includes
 is demonstrated with the footer in the code samples. Sample 1 is in your root
 directory while sample 2 is in a sub-folder. Take note that the only difference
 between the two is on the first line.
+
 
 #### Sample 1 (site index page):
 
@@ -99,6 +104,7 @@ between the two is on the first line.
 </html>
 ```
 
+
 #### Sample 2 (sub-folder index page):
 
 ```php
@@ -114,3 +120,5 @@ between the two is on the first line.
 </body>
 </html>
 ```
+
+[demo-site]: http://localhost:63342/php-sub-site-demo/index.php
