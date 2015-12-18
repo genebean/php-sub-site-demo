@@ -3,7 +3,7 @@ each site's root is. Once the "real_root" is found it is used to prefix any
 PHP or HTML includes. The structure of the site looks like this:
 
 ```bash
-$ tree -a -L 2
+$ tree -a
 .
 ├── css
 │   └── style.css
