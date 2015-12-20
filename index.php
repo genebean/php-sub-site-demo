@@ -14,7 +14,7 @@
         <tr> <td>Style Sheet Path</td> <td><?php echo $url_prefix;?>css/style.css</td> </tr>
     </table>
     <ul><li><a href="site2">Second website in a subfolder</a>
-        <li><a href="site2i/sub3">A folder inside the second site</a></ul>
+        <li><a href="site2/sub3">A folder inside the second site</a></ul>
     <?php require $real_root . 'footer.php'; ?>
 </body>
 </html>
