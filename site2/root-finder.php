@@ -33,6 +33,8 @@ do {
             $real_root  = dirname($real_root);
         }
     } else {
+        $last_dir_in_root = end(explode('/',$real_root));
+        $url_prefix = substr($_SERVER['REQUEST_URI'], 0, strrpos($_SERVER['REQUEST_URI'], $last_dir_in_root)) . $last_dir_in_root . '/';
         $found = TRUE;
     }
 } while (!$found);
