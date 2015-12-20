@@ -17,4 +17,3 @@
     <?php include $real_root . 'footer.php'; ?>
 </body>
 </html>
-

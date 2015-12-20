@@ -18,4 +18,3 @@
     <?php require $real_root . 'footer.php'; ?>
 </body>
 </html>
-
