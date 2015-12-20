@@ -32,9 +32,21 @@ do {
         } else {
             $real_root  = dirname($real_root);
         }
+    } elseif ($real_root !== '/') {
+        if (glob($file)) {
+            $found = TRUE;
+
+            $last_dir_in_root = end(explode('/', $real_root));
+            $url_prefix = substr($_SERVER['REQUEST_URI'], 0, strrpos($_SERVER['REQUEST_URI'], $last_dir_in_root)) . $last_dir_in_root;
+
+            if (substr($real_root, -1) !== '/') {
+                $real_root  .= '/';
+                $url_prefix .= '/';
+            }
+        } else {
+            $real_root  = dirname($real_root);
+        }
     } else {
-        $last_dir_in_root = end(explode('/',$real_root));
-        $url_prefix = substr($_SERVER['REQUEST_URI'], 0, strrpos($_SERVER['REQUEST_URI'], $last_dir_in_root)) . $last_dir_in_root . '/';
         $found = TRUE;
     }
 } while (!$found);
